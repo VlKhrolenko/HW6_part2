@@ -25,6 +25,8 @@ function padString (str,strLeng,symb,right=true) {
     if (str.length >= strLeng) {
         return str;
     }
+    if (str.length >= strLeng) {
+        return str.substr(0 , strLeng )
 
     while (str.length < strLeng) {
         if (right === true) {
