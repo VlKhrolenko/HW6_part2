@@ -17,17 +17,14 @@
 // Вызов padString(‘hello’, 2) вернет ‘he’ — если число меньше, чем размер введенной строки, нужно строку обрезать при помощи метода substr
 
 
-function padString (str,strLeng,symb,right=true) {
+function padString (str,strLeng,symb="*",right=true) {
     if (typeof str !== "string" ) return "В строке допущенна ошибка,введите коректные данные";
     if (typeof strLeng !== "number" ) return "В длине строки допущенна ошибка,введите коректные данные";
     if (symb.length !== 1) return "При введении символа допущенна ошибка,введите коректные данные длиной 1";
 
     if (str.length >= strLeng) {
-        return str;
+        return str.substr(0, strLeng)
     }
-    if (str.length >= strLeng) {
-        return str.substr(0 , strLeng )
-
     while (str.length < strLeng) {
         if (right === true) {
             str += symb;
@@ -41,3 +38,4 @@ function padString (str,strLeng,symb,right=true) {
 
 console.log(padString('hello Rusik', 13, '*', true))
 console.log(padString('hello Rusik', 13, '*', false))
+console.log(padString('hello Rusik', 2))
